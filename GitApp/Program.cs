@@ -14,12 +14,19 @@ namespace GitApp
     {
         static void Main(string[] args)
         {
+            int x, y;
+            Console.WriteLine("Enter two numbers to guess between.");
+            Console.Write("Starting number: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ending number: ");
+            y = Convert.ToInt32(Console.ReadLine());
+
             Random rnd = new Random();
-            int randomNum = rnd.Next(1, 10);
+            int randomNum = rnd.Next(x, y);
             int guessCount = 1;
             
-
-            Console.WriteLine("I'm thinking of a number between 1 and 10. Can you guess it?");
+            
+            Console.WriteLine("I'm thinking of a number between {0} and {1}. Can you guess it?", x, y);
             Console.WriteLine();
 
             int userGuess = Convert.ToInt32(Console.ReadLine());
